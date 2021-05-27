@@ -7,6 +7,8 @@ namespace EmployeeWagecalculation
     public class EmployeeWage
     {
         const int IS_PRESENT = 1;
+        const int EMP_WAGE_PER_hour = 20;
+        
         public void CalculateEmployeeAttendance()
         {
             Random random = new Random();
@@ -21,7 +23,7 @@ namespace EmployeeWagecalculation
         {
             int TotalWorkingWagePerDay = 0;
             int IS_FULLTIME = 1;
-            int WAGE_PER_HOUR = 20;
+          
             int empworkinghrsperday = 0;
             int wagepertotalhours = 0;
             Random random = new Random();
@@ -38,8 +40,35 @@ namespace EmployeeWagecalculation
                 Console.WriteLine($"empworkinghrperday:{empworkinghrsperday}");
 
             }
-            TotalWorkingWagePerDay = empworkinghrsperday * WAGE_PER_HOUR;
+            TotalWorkingWagePerDay = empworkinghrsperday * EMP_WAGE_PER_hour;
             Console.WriteLine($"empfullwage:{TotalWorkingWagePerDay}");
+        }
+        public void PartTimeWage()
+        {
+            int IS_PART_TIME = 1;
+            int IS_FULL_TIME = 2;
+
+            int empWorkingHoursPerDay = 0;
+            int empWagePerDay = 0;
+
+            Random random = new Random();
+
+            int empCheck = random.Next(0, 3);
+
+            if (empCheck == IS_PART_TIME)
+            {
+                empWorkingHoursPerDay = 4;
+            }
+            else if (empCheck == IS_FULL_TIME)
+            {
+                empWorkingHoursPerDay = 8;
+            }
+            else
+            {
+                empWorkingHoursPerDay = 0;
+            }
+            empWagePerDay = empWorkingHoursPerDay * EMP_WAGE_PER_hour;
+            Console.WriteLine("Emp Wage : " + empWagePerDay);
         }
     }
 
