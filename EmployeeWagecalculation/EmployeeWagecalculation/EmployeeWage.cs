@@ -8,7 +8,9 @@ namespace EmployeeWagecalculation
     {
         const int IS_PRESENT = 1;
         const int EMP_WAGE_PER_hour = 20;
-        
+        const int IS_PART_TIME = 1;
+        const int IS_FULL_TIME = 2;
+
         public void CalculateEmployeeAttendance()
         {
             Random random = new Random();
@@ -31,23 +33,20 @@ namespace EmployeeWagecalculation
             if (empcheck == 1)
             {
                 empworkinghrsperday = 8;
-                Console.WriteLine($"empworkinghrperday:{empworkinghrsperday}");
+                Console.WriteLine($"employee workinghour perday:{empworkinghrsperday}");
 
             }
             else
             {
                 empworkinghrsperday = 0;
-                Console.WriteLine($"empworkinghrperday:{empworkinghrsperday}");
+                Console.WriteLine($"employee workinghrperday:{empworkinghrsperday}");
 
             }
             TotalWorkingWagePerDay = empworkinghrsperday * EMP_WAGE_PER_hour;
-            Console.WriteLine($"empfullwage:{TotalWorkingWagePerDay}");
+            Console.WriteLine($"employee fullwage:{TotalWorkingWagePerDay}");
         }
         public void PartTimeWage()
         {
-            int IS_PART_TIME = 1;
-            int IS_FULL_TIME = 2;
-
             int empWorkingHoursPerDay = 0;
             int empWagePerDay = 0;
 
@@ -68,7 +67,32 @@ namespace EmployeeWagecalculation
                 empWorkingHoursPerDay = 0;
             }
             empWagePerDay = empWorkingHoursPerDay * EMP_WAGE_PER_hour;
-            Console.WriteLine("Emp Wage : " + empWagePerDay);
+            Console.WriteLine("Employee Wage : " + empWagePerDay);
+        }
+        public void EmpWageinswitch()
+        {
+            int empWorkingHoursPerDay = 0;
+            int empWagePerDay = 0;
+
+            Random random = new Random();
+
+            int empCheck = random.Next(0, 3);
+
+            switch (empCheck)
+            {
+                case IS_PART_TIME:
+                    empWorkingHoursPerDay = 4;
+                    break;
+                case IS_FULL_TIME:
+                    empWorkingHoursPerDay = 8;
+                    break;
+                default:
+                    empWorkingHoursPerDay = 0;
+                    break;
+            }
+
+            empWagePerDay = empWorkingHoursPerDay * EMP_WAGE_PER_hour;
+            Console.WriteLine("Employee Wage : " + empWagePerDay);
         }
     }
 
