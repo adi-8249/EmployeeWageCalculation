@@ -10,6 +10,7 @@ namespace EmployeeWagecalculation
             EmployeeWage employeeWage = new EmployeeWage();
             employeeWage.CalculateEmployeeAttendance();
             employeeWage.CalculateDaillyEmpWage();
+            employeeWage.PartTimeWage();
         }
     }
 }
