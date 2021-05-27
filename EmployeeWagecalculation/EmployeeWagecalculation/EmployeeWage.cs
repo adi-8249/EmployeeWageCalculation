@@ -11,6 +11,8 @@ namespace EmployeeWagecalculation
         const int IS_PART_TIME = 1;
         const int IS_FULL_TIME = 2;
         const int Total_working_days = 2;
+        const int MAX_HRS_IN_MONTH = 10;
+        const int NUM_OF_WORKING_DAYS = 2;
 
         public void CalculateEmployeeAttendance()
         {
@@ -121,6 +123,36 @@ namespace EmployeeWagecalculation
                 Console.WriteLine("emp wage: " + empWages);
             }
             Console.WriteLine("total emp wage:" + totalEmpWage);
+        }
+        public void EmpWageinCondition()
+        {
+            int emphrs = 0;
+            int totalEmphrs = 0;
+            int totalWorkingDays = 0;
+
+            while (totalEmphrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS)
+            {
+                totalWorkingDays++;
+                Random random = new Random();
+                int empCheck = random.Next(0, 3);
+                switch (empCheck)
+                {
+                    case IS_PART_TIME:
+                        emphrs = 4;
+                        break;
+                    case IS_FULL_TIME:
+                        emphrs = 8;
+                        break;
+                    default:
+                        emphrs = 0;
+                        break;
+
+                }
+                totalEmphrs += emphrs;
+                Console.WriteLine("Days:" + totalWorkingDays + "emphrs:" + emphrs);
+            }
+            int totalEmpWage = totalEmphrs * EMP_WAGE_PER_hour;
+            Console.WriteLine("total employee Wage :" + totalEmpWage);
         }
     }
 

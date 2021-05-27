@@ -13,6 +13,7 @@ namespace EmployeeWagecalculation
             employeeWage.PartTimeWage();
             employeeWage.EmpWageinswitch();
             employeeWage.EmpWagePerMonth();
+            employeeWage.EmpWageinCondition();
 
 
         }
