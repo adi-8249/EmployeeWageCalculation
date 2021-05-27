@@ -12,6 +12,8 @@ namespace EmployeeWagecalculation
             employeeWage.CalculateDaillyEmpWage();
             employeeWage.PartTimeWage();
             employeeWage.EmpWageinswitch();
+            employeeWage.EmpWagePerMonth();
+
 
         }
     }
