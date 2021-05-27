@@ -9,6 +9,7 @@ namespace EmployeeWagecalculation
             Console.WriteLine("Welcome to Employee Wage Calculation");
             EmployeeWage employeeWage = new EmployeeWage();
             employeeWage.CalculateEmployeeAttendance();
+            employeeWage.CalculateDaillyEmpWage();
         }
     }
 }
