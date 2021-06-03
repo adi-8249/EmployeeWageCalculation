@@ -14,6 +14,9 @@ namespace EmployeeWagecalculation
             employeeWage.EmpWageinswitch();
             employeeWage.EmpWagePerMonth();
             employeeWage.EmpWageinCondition();
+            EmployeeWage.CalculationEmpWage();
+
+
 
 
         }

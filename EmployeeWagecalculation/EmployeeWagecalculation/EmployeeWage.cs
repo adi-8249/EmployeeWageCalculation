@@ -154,6 +154,38 @@ namespace EmployeeWagecalculation
             int totalEmpWage = totalEmphrs * EMP_WAGE_PER_hour;
             Console.WriteLine("total employee Wage :" + totalEmpWage);
         }
+        public static int CalculationEmpWage()
+        {
+            int empHrs = 0;
+            int totalEmpHrs = 0;
+            int totalWorkingDays = 0;
+
+
+            while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS)
+            {
+                totalWorkingDays++;
+
+                Random random = new Random();
+                int empcheck = random.Next(0, 3);
+                switch (empcheck)
+                {
+                    case IS_PART_TIME:
+                        empHrs = 4;
+                        break;
+                    case IS_FULL_TIME:
+                        empHrs = 8;
+                        break;
+                    default:
+                        empHrs = 0;
+                        break;
+                }
+                totalEmpHrs += empHrs;
+                Console.WriteLine("Days :" + totalWorkingDays + "EmpHrs:" + empHrs);
+            }
+            int totalEmpWage = totalEmpHrs * EMP_WAGE_PER_hour;
+            Console.WriteLine("Total emp wage:" + totalEmpWage);
+            return totalEmpWage;
+        }
     }
 
 }
