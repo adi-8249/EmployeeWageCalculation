@@ -15,6 +15,11 @@ namespace EmployeeWagecalculation
             employeeWage.EmpWagePerMonth();
             employeeWage.EmpWageinCondition();
             EmployeeWage.CalculationEmpWage();
+            EmployeeWage.EmpWageMultipleCompany("Dmart", 20, 2, 10);
+            EmployeeWage.EmpWageMultipleCompany("Relience", 10,4,20);
+
+
+
 
 
 

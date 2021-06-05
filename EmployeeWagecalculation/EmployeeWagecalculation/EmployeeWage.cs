@@ -12,7 +12,7 @@ namespace EmployeeWagecalculation
         const int IS_FULL_TIME = 2;
         const int Total_working_days = 2;
         const int MAX_HRS_IN_MONTH = 10;
-        const int NUM_OF_WORKING_DAYS = 2;
+        const int NUM_OF_WORKING_DAYS = 2; 
 
         public void CalculateEmployeeAttendance()
         {
@@ -24,6 +24,8 @@ namespace EmployeeWagecalculation
                 Console.WriteLine("employee is absent");
 
         }
+
+       
         public void CalculateDaillyEmpWage()
         {
             int TotalWorkingWagePerDay = 0;
@@ -186,6 +188,41 @@ namespace EmployeeWagecalculation
             Console.WriteLine("Total emp wage:" + totalEmpWage);
             return totalEmpWage;
         }
+     
+        internal static int EmpWageMultipleCompany(string company, int empRatePerHour, int numberOfWorkingDays, int maxHourPerMonth)
+        {
+            int emphrs = 0;
+            int totalEmphrs = 0;
+            int totalWorkingDays = 0;
+
+            while (totalEmphrs <= maxHourPerMonth && totalWorkingDays <= numberOfWorkingDays)
+            {
+                totalWorkingDays++;
+                Random random = new Random();
+                int empCheck = random.Next();
+
+                switch (empCheck)
+                {
+                    case IS_PART_TIME:
+                        emphrs = 4;
+                        break;
+
+                    case IS_FULL_TIME:
+                        emphrs = 8;
+                        break;
+
+                    default:
+                        emphrs = 0;
+                        break;
+                }
+                totalEmphrs = totalEmphrs + emphrs;
+                Console.WriteLine("Days:" + totalWorkingDays + "empHrs" + emphrs);
+            }
+            int totalEmpWage = totalEmphrs + empRatePerHour;
+            Console.WriteLine("Total empWage for company" + company + "is" + totalEmpWage);
+            return totalEmpWage;
+        }
+
     }
 
 }
