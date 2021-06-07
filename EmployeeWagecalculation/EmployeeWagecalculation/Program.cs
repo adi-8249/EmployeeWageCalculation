@@ -7,23 +7,12 @@ namespace EmployeeWagecalculation
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Employee Wage Calculation");
-            EmployeeWage employeeWage = new EmployeeWage();
-            employeeWage.CalculateEmployeeAttendance();
-            employeeWage.CalculateDaillyEmpWage();
-            employeeWage.PartTimeWage();
-            employeeWage.EmpWageinswitch();
-            employeeWage.EmpWagePerMonth();
-            employeeWage.EmpWageinCondition();
-            EmployeeWage.CalculationEmpWage();
-            EmployeeWage.EmpWageMultipleCompany("Dmart", 20, 2, 10);
-            EmployeeWage.EmpWageMultipleCompany("Relience", 10,4,20);
 
+            EmpWageArray empwagearray = new EmpWageArray();
 
-
-
-
-
-
+            empwagearray.addCompanyEmpWage("Dmart", 15, 2, 8);
+            empwagearray.addCompanyEmpWage("Relience,", 10, 2, 8);
+            empwagearray.computeEmpWage();
         }
     }
 }
