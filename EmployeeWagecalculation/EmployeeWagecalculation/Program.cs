@@ -11,7 +11,7 @@ namespace EmployeeWagecalculation
             EmpWageArray empwagearray = new EmpWageArray();
 
             empwagearray.addCompanyEmpWage("Dmart", 15, 2, 8);
-            empwagearray.addCompanyEmpWage("Relience,", 10, 2, 8);
+            empwagearray.addCompanyEmpWage("Relience", 10, 2, 8);
             empwagearray.computeEmpWage();
         }
     }

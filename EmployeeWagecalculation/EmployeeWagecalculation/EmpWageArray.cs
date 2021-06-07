@@ -37,7 +37,7 @@ namespace EmployeeWagecalculation
 
 
             //computation using whileloop
-            while (totalEmpHrs <= companyempwage.maxHoursPerMonth && totalWorkingDays < companyempwage.numOfWorkingDays) ;
+            while (totalEmpHrs <= companyempwage.maxHoursPerMonth && totalWorkingDays < companyempwage.numOfWorkingDays) 
             {
                 totalWorkingDays++;
                 Random random = new Random();
